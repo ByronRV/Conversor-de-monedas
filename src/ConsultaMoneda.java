@@ -7,11 +7,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ConsultaMoneda {
-    //Su clave API: 95f33eb4aa4c2a67945e453f
-    //Ejemplo de solicitud: https://v6.exchangerate-api.com/v6/95f33eb4aa4c2a67945e453f/latest/USD
-    public Moneda buscaMoneda (){
+    public Moneda buscaMoneda (String divisa){
+
         String clave = "95f33eb4aa4c2a67945e453f";
-        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/"+clave+"/latest/USD");
+        //URI direccion = URI.create("https://v6.exchangerate-api.com/v6/"+clave+"/latest/USD");
+        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/" + clave + "/latest/" + divisa);
 
         // httprequest (Solicitud)
         HttpClient client = HttpClient.newHttpClient();
